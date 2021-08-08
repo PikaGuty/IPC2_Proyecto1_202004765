@@ -4,6 +4,7 @@ from P1_OP3 import op3
 from P1_OP4 import op4
 from P1_OP5 import op5
 from P1_OP6 import op6
+from ObjTerreno import Terreno
 
 seleccion = 0
 res=[]
@@ -25,9 +26,9 @@ while seleccion != 6:
     except:
         print("Debe ingresar un número")
     if seleccion==1:
-        op1.CargarArchivo()
+        Terrenos=op1.CargarArchivo()
     elif seleccion==2:
-        op2.ProcesarTerreno()
+        op2.ProcesarTerreno(Terrenos)
     elif seleccion==3:
         op3.EscribirArchivo()
     elif seleccion==4:

@@ -1,11 +1,18 @@
 class Terreno:
-    def __init__(self,nombre,inicio,fin,dimc,dimf,gas):
+    def __init__(self,nombre,inicio,fin,gas):
         self.nombre = nombre
         self.inicio = inicio
         self.fin = fin
-        self.dimc = dimc
-        self.dimf = dimf
         self.gas = gas
+        
+        
+        g=list(gas.items())[-1]
+        gg=str(g).split(",")
+        print(gg)
+
+        self.dimc = int((gg[0].split("\'"))[1])
+        self.dimf = int((gg[1].split("\'"))[0])
+        print(str(nombre)+" Guardado con éxito")
 
     #Métodos GET
     def getNombre(self):

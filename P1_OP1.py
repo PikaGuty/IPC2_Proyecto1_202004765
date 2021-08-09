@@ -16,7 +16,7 @@ class op1:
         for terrenos in raiz.findall('terreno'):
             #obteniendo nombre del terreno
             nombre=terrenos.get('nombre')
-            print(nombre)
+            #print(nombre)
             #Obteniendo posicion de inicio
             for coordenadas in terrenos.findall('posicioninicio'):
                 #Coordenada en x
@@ -26,7 +26,7 @@ class op1:
                 for xy in coordenadas.findall('y'):
                     piy=xy.text
                 inicio=[int(pix),int(piy)]
-                print(inicio)
+                #print(inicio)
             #Obteniendo posicion final
             for coordenadas in terrenos.findall('posicionfin'):
                 #Coordenada en x
@@ -36,7 +36,7 @@ class op1:
                 for xy in coordenadas.findall('y'):
                     pfy=xy.text
                 fin=[int(pfx),int(pfy)]
-                print(fin)
+                #print(fin)
             #Coordenadas Matriz
             gas={}
             for coordenadas in terrenos.findall('posicion'):
@@ -48,13 +48,13 @@ class op1:
                 gaso=coordenadas.text
                 gass={""+str(px)+","+str(py):int(gaso)}
                 gas.update(gass)
-            print(gas)
+            #print(gas)
             sn=True
             #Verificando si existe el terreno
             for t in Terrenos:
                 if nombre==t.getNombre():
                     sn=False
-                    print("El terreno "+nombre+" ya existe")
+                    #print("El terreno "+nombre+" ya existe")
             #Guardando terreno
             if sn:
                 NewT=Terreno(nombre,inicio,fin,gas)

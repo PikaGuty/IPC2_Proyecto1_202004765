@@ -6,7 +6,7 @@
 			<y>1</y>
 		</posicioninicio>
 		<posicionfin>
-			<x>5</x>
+			<x>1</x>
 			<y>5</y>
 		</posicionfin>
 		<posicion x="1" y="1">1</posicion>
@@ -44,7 +44,7 @@
 			<x>6</x>
 			<y>1</y>
 		</posicionfin>
-		<posicion x="1" y="1">1</posicion>
+		<posicion x="1" y="1">2</posicion>
 		<posicion x="1" y="2">1</posicion>
 		<posicion x="1" y="3">1</posicion>
 		<posicion x="1" y="4">3</posicion>

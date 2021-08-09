@@ -8,7 +8,7 @@ class Terreno:
         
         g=list(gas.items())[-1]
         gg=str(g).split(",")
-        print(gg)
+        #print(gg)
 
         self.dimc = int((gg[0].split("\'"))[1])
         self.dimf = int((gg[1].split("\'"))[0])

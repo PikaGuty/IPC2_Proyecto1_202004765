@@ -70,8 +70,14 @@ class op2:
             CActual=[CActual[1]-1,CActual[0]-1]
             CFinal=[CFinal[1]-1,CFinal[0]-1]
 
-            ListaC=[]
+            ListaC=[CActual]
             Gasolina=0
+
+            print("\n\nCoordenadas Actuales:")
+            print(CActual)
+            print("Coordenadas Finales:")
+            print(CFinal)
+            print("Limites "+str(DimC)+" , "+str(DimF))
             
             while CActual!=CFinal:
                 sup=[]
@@ -80,29 +86,29 @@ class op2:
                 izq=[]
                 if CActual[0]>=0 and CActual[1]-1>=0 and [int(CActual[0]),int(CActual[1]-1)] not in ListaC:
                     distancia=abs(CFinal[0]-CActual[0])+abs(CFinal[1]-int(CActual[1]-1))
-                    izq.append(MatrizG[int(CActual[0])][int(CActual[1]-1)]+distancia)
                     cizq=[int(CActual[0]),int(CActual[1]-1)]
+                    izq.append(MatrizG[int(CActual[0])][int(CActual[1]-1)]+distancia+op2.EvaluarFuturo(cizq,CFinal,MatrizG,ListaC,DimC,DimF))
                     izq.append(cizq)
                 else:
                     izq=[9999,[1000,1000]]
                 if CActual[0]>=0 and CActual[1]+1<DimC and [int(CActual[0]),int(CActual[1]+1)] not in ListaC:
                     distancia=abs(CFinal[0]-CActual[0])+abs(CFinal[1]-int(CActual[1]+1))
-                    der.append(MatrizG[int(CActual[0])][int(CActual[1]+1)]+distancia)
                     cder=[int(CActual[0]),int(CActual[1]+1)]
+                    der.append(MatrizG[int(CActual[0])][int(CActual[1]+1)]+distancia+op2.EvaluarFuturo(cder,CFinal,MatrizG,ListaC,DimC,DimF))
                     der.append(cder)
                 else:
                     der=[9999,[1000,1000]]
-                if CActual[1]>=0 and CActual[0]-1>=0 and [int(CActual[0]),int(CActual[1])] not in ListaC:
+                if CActual[1]>=0 and CActual[0]-1>=0 and [int(CActual[0]-1),int(CActual[1])] not in ListaC:
                     distancia=abs(CFinal[0]-int(CActual[0]-1))+abs(CFinal[1]-int(CActual[1]))
-                    sup.append(MatrizG[int(CActual[0]-1)][int(CActual[1])]+distancia)
                     csup=[int(CActual[0]-1),int(CActual[1])]
+                    sup.append(MatrizG[int(CActual[0]-1)][int(CActual[1])]+distancia+op2.EvaluarFuturo(csup,CFinal,MatrizG,ListaC,DimC,DimF))
                     sup.append(csup)
                 else:
                     sup=[9999,[1000,1000]]
                 if CActual[1]>=0 and CActual[0]+1<DimF and [int(CActual[0]+1),int(CActual[1])] not in ListaC:
                     distancia=abs(CFinal[0]-int(CActual[0]+1))+abs(CFinal[1]-int(CActual[1]))
-                    inf.append(MatrizG[int(CActual[0]+1)][int(CActual[1])]+distancia)
                     cinf=[int(CActual[0]+1),int(CActual[1])]
+                    inf.append(MatrizG[int(CActual[0]+1)][int(CActual[1])]+distancia+op2.EvaluarFuturo(cinf,CFinal,MatrizG,ListaC,DimC,DimF))
                     inf.append(cinf)
                 else:
                     inf=[9999,[1000,1000]]
@@ -116,6 +122,56 @@ class op2:
                 print("Nueva coordenada "+str(cop)+" Gasto de Gasolina "+str(opp1))
                 ListaC.append(cop)
                 CActual=cop
+
+
+    def EvaluarFuturo(CFutura,CFinall,MatrizGG,ListaCC,DimCC,DimFF):
+        CActual=CFutura
+        CFinal=CFinall
+        MatrizG=MatrizGG
+        ListaC=ListaCC
+        DimC=DimCC
+        DimF=DimFF
+        sup=[]
+        inf=[]
+        der=[]
+        izq=[]
+        if CActual[0]>=0 and CActual[1]-1>=0 and [int(CActual[0]),int(CActual[1]-1)] not in ListaC:
+            distancia=abs(CFinal[0]-CActual[0])+abs(CFinal[1]-int(CActual[1]-1))
+            izq.append(MatrizG[int(CActual[0])][int(CActual[1]-1)]+distancia)
+            cizq=[int(CActual[0]),int(CActual[1]-1)]
+            izq.append(cizq)
+        else:
+            izq=[9999,[1000,1000]]
+        if CActual[0]>=0 and CActual[1]+1<DimC and [int(CActual[0]),int(CActual[1]+1)] not in ListaC:
+            distancia=abs(CFinal[0]-CActual[0])+abs(CFinal[1]-int(CActual[1]+1))
+            der.append(MatrizG[int(CActual[0])][int(CActual[1]+1)]+distancia)
+            cder=[int(CActual[0]),int(CActual[1]+1)]
+            der.append(cder)
+        else:
+            der=[9999,[1000,1000]]
+        if CActual[1]>=0 and CActual[0]-1>=0 and [int(CActual[0]),int(CActual[1])] not in ListaC:
+            distancia=abs(CFinal[0]-int(CActual[0]-1))+abs(CFinal[1]-int(CActual[1]))
+            sup.append(MatrizG[int(CActual[0]-1)][int(CActual[1])]+distancia)
+            csup=[int(CActual[0]-1),int(CActual[1])]
+            sup.append(csup)
+        else:
+            sup=[9999,[1000,1000]]
+        if CActual[1]>=0 and CActual[0]+1<DimF and [int(CActual[0]+1),int(CActual[1])] not in ListaC:
+            distancia=abs(CFinal[0]-int(CActual[0]+1))+abs(CFinal[1]-int(CActual[1]))
+            inf.append(MatrizG[int(CActual[0]+1)][int(CActual[1])]+distancia)
+            cinf=[int(CActual[0]+1),int(CActual[1])]
+            inf.append(cinf)
+        else:
+            inf=[9999,[1000,1000]]
+                
+        ord=[sup,inf,izq,der]
+        asc=sorted(ord, key=lambda gas: gas[0])
+        cop=asc[0][1]
+        opp1=int(MatrizG[int(cop[0])][int(cop[1])])
+        #print("Nueva coordenada "+str(cop)+" Gasto de Gasolina "+str(opp1))
+        return opp1
+
+                
 
 
                 

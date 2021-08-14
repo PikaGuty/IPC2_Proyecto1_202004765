@@ -1,13 +1,17 @@
 <?xml version="1.0" ?>
 <terrenos>
 	<terreno nombre="terreno 1">
+		<dimension>
+			<m>5</m>
+			<n>5</n>
+		</dimension>
 		<posicioninicio>
 			<x>1</x>
 			<y>1</y>
 		</posicioninicio>
 		<posicionfin>
-			<x>3</x>
-			<y>2</y>
+			<x>5</x>
+			<y>5</y>
 		</posicionfin>
 		<posicion x="1" y="1">1</posicion>
 		<posicion x="1" y="2">1</posicion>
@@ -36,8 +40,12 @@
 		<posicion x="5" y="5">1</posicion>
 	</terreno>
 	<terreno nombre="terreno 2">
+		<dimension>
+			<m>7</m>
+			<n>4</n>
+		</dimension>
 		<posicioninicio>
-			<x>2</x>
+			<x>1</x>
 			<y>2</y>
 		</posicioninicio>
 		<posicionfin>
@@ -64,7 +72,7 @@
 		<posicion x="5" y="2">3</posicion>
 		<posicion x="5" y="3">1</posicion>
 		<posicion x="5" y="4">5</posicion>
-		<posicion x="6" y="1">1</posicion>
+		<posicion x="6" y="1">9</posicion>
 		<posicion x="6" y="2">2</posicion>
 		<posicion x="6" y="3">2</posicion>
 		<posicion x="6" y="4">2</posicion>

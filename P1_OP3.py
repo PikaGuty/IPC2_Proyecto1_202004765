@@ -24,6 +24,9 @@ class op3:
                 print("Debe ingresar un número")
             if seleccion==(cc+1):
                 break
+            elif seleccion>(cc+1):
+                print("Seleccione un numero del menú")
+                continue
             try:
                 Ress = Res.retornar_seleccionado(seleccion)
             except:

@@ -10,11 +10,11 @@ gass=MOrto()
 
 class op1:
     def CargarArchivo():
+        print("\n\n")
+        print("******************* Cargar Archivo *******************")
+        ruta=input("Ingrese la ruta del archivo\n")
         
-        #print("******************* Cargar Archivo *******************")
-        #ruta=input("Ingrese la ruta del archivo\n")
-        
-        archivo=ET.parse('C:/Users/gohan/OneDrive - Facultad de Ingeniería de la Universidad de San Carlos de Guatemala/U/4 to Semestre/Laboratorio IPC2/IPC2_Proyecto1_202004765/prueba.xml')
+        archivo=ET.parse(ruta)
         raiz = archivo.getroot()
         
         for terrenos in raiz.findall('terreno'):

@@ -24,7 +24,10 @@ class op3:
                 print("Debe ingresar un número")
             if seleccion==(cc+1):
                 break
-            Ress = Res.retornar_seleccionado(seleccion)
+            try:
+                Ress = Res.retornar_seleccionado(seleccion)
+            except:
+                break
         #******************************************************************
             root = ET.Element("terrenos")
             doc = ET.SubElement(root, "terreno", name=str(Ress.getNombre()))

@@ -21,7 +21,10 @@ class op5:
                 print("Debe ingresar un número")
             if seleccion==(cc+1):
                 break
-            Ress = Res.retornar_seleccionado(seleccion)
+            try:
+                Ress = Res.retornar_seleccionado(seleccion)
+            except:
+                break
 
             NomT=Terr.retornar(Ress.getNombre()).getNombre()
             #Dimension de Columnas

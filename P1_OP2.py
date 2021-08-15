@@ -30,7 +30,10 @@ class op2:
                 print("Debe ingresar un número")
             if seleccion==(c+1):
                 break
-            Terr = Ter.retornar_seleccionado(seleccion)
+            try:
+                Terr = Ter.retornar_seleccionado(seleccion)
+            except:
+                break
 
             #Nombre terreno
             NomT=Terr.getNombre()

@@ -119,6 +119,14 @@ class Lista:
             tNode = tNode.sig
             c+=1
 
+    def retornar(self, n):
+        tNode = self.primero
+        while tNode != None:
+            if n is tNode.getNombre():
+                return tNode
+            tNode = tNode.sig
+            
+
     def longitud(self):
         tNode = self.primero
         c=0

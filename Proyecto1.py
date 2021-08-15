@@ -10,6 +10,7 @@ seleccion = 0
 res=[]
 
 while seleccion != 6:
+    print("\n\n\n")
     print('***************************************************************\n'+
           '**                            MENU                           **\n'+
           '***************************************************************\n'+
@@ -28,13 +29,13 @@ while seleccion != 6:
     if seleccion==1:
         Terrenos=op1.CargarArchivo()
     elif seleccion==2:
-        op2.ProcesarTerreno(Terrenos)
+        Resultado=op2.ProcesarTerreno(Terrenos)
     elif seleccion==3:
-        op3.EscribirArchivo()
+        op3.EscribirArchivo(Resultado)
     elif seleccion==4:
         op4.MostrarDatosE()
     elif seleccion==5:
-        op5.GenerarGrafica()
+        op5.GenerarGrafica(Terrenos,Resultado)
     elif seleccion==6:
         print("¿Quiere salir? S/N")
         conf=input().upper()

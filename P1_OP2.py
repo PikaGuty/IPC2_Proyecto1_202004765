@@ -5,6 +5,8 @@ from MOrto import MOrto
 from NOrtogonal import NodoOrtogonal
 from ListaC import ListaCerrada
 from ListaC import ListaC
+from resultado import Resultado
+from resultado import ListaR
 
 
 class op2:
@@ -12,8 +14,10 @@ class op2:
         Ter=Terrenos
         c=Ter.longitud()
         seleccion = 0
+        ListaRR=ListaR()
         while seleccion != (c+1):
             c=Ter.longitud()
+            print("\n\n\n")
             print('***************************************************************\n'+
                 '**         SELECCIONE EL TERRENO QUE DESEA PROCESAR          **\n'+
                 '***************************************************************')
@@ -191,7 +195,15 @@ class op2:
                 print() 
 
             print("\n\n")
-        return 
+            
+            #Verificando si existe el terreno
+            sn=ListaRR.bus(NomT)
+             
+            #Guardando terreno
+            if sn:
+                ListaRR.insertar(Resultado(NomT,CPix+1,CPiy+1,CPfx+1,CPfy+1,DimC,DimF,Gasolina,ListaCC))
+            ListaRR.mostrar()
+        return ListaRR
                     
                     
 

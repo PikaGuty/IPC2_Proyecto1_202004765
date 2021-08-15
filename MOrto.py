@@ -63,6 +63,14 @@ class MOrto:
                 print('')
                 m = m.abajo
 
+    def bus(self, nombre):
+        tNode = self.iNodo
+        while tNode != None:
+            if nombre == tNode.getNombre():
+                return tNode
+            tNode = tNode.sig
+        return None
+
     
 
  

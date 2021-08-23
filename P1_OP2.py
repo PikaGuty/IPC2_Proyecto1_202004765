@@ -192,8 +192,8 @@ class op2:
                     
             print("\n")  
 
-            for j in range(int(DimC)):
-                for i in range(int(DimF)):
+            for j in range(int(DimF)):
+                for i in range(int(DimC)):
                     if ListaCC.ExisteCoordenada(CmGas.obtener(int(i),int(j)).getX(),CmGas.obtener(int(i),int(j)).getY()):
                         print(0,end=" ")   
                     else:

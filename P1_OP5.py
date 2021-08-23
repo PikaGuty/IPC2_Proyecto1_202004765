@@ -37,9 +37,9 @@ class op5:
             #Matriz ortogonal de gas y coordenadas
             CmGas=Terr.retornar(Ress.getNombre()).getGas()
             tabla=""
-            for j in range(int(DimC)):
+            for j in range(int(DimF)):
                 tabla+='<TR>'
-                for i in range(int(DimF)):
+                for i in range(int(DimC)):
                     if Ress.getRecorrido().ExisteCoordenada(int(i),int(j)):
                         gas=CmGas.obtener(i,j).getDato()
                         tabla+='<TD border="3"  bgcolor="lightgoldenrod1" gradientangle="315">'+str(gas)+'</TD>'   

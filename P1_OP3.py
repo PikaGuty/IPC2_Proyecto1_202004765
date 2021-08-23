@@ -1,5 +1,5 @@
 import xml.etree.cElementTree as ET
-import xml.dom.minidom
+
 from xml.dom import minidom
 from resultado import Resultado
 from resultado import ListaR
